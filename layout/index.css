@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-image: url("../images/bg-tablet-pattern.svg");
+  background-position: 90% -25%;
+  background-size: 800px;
+  background-repeat: no-repeat;
+}
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 2.8px;
+  margin: 5px auto;
+  background: #000;
+  border-radius: 0.25rem;
+  transition: all 0.4s ease-in-out;
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  body {
+    background-position: 90% -10%;
+    background-size: 550px;
+  }
+}
+@media (max-width: 320px) {
+  body {
+    background-position: 50px -30px;
+    background-size: 500px;
+  }
+}
